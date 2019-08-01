@@ -1,0 +1,32 @@
+{
+    "name": "vscode-dbml",
+    "displayName": "vscode-dbml",
+    "description": "Language support for the Database Markup Language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.36.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "dbml",
+            "aliases": ["DBML", "dbml", "Database Markup Language"],
+            "extensions": [".dbml"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "dbml",
+            "scopeName": "source.dbml",
+            "path": "./syntaxes/dbml.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+              "language": "dbml",
+              "path": "./snippets/dbml.json"
+            }
+          ]
+    }
+}

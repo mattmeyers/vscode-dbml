@@ -1,0 +1,11 @@
+{
+	"New table": {
+		"prefix": "table",
+		"body": [
+			"Table $1 {",
+			"\t$0",
+			"}"
+		],
+		"description": "Create a new table"
+	}
+}
