@@ -3,17 +3,23 @@
   "name": "DBML",
   "patterns": [
     {
-      "include": "#keywords"
+      "include": "#settings"
     },
     {
       "include": "#strings"
     },
     {
       "include": "#comment"
+    },
+    {
+      "include": "#alias"
+    },
+    {
+      "include": "#colors"
     }
   ],
   "repository": {
-    "keywords": {
+    "settings": {
       "patterns": [
         {
           "begin": "\\[",
@@ -24,22 +30,37 @@
             },
             {
               "include": "#strings"
+            },
+            {
+              "include": "#relations"
+            },
+            {
+              "include": "#ref"
             }
           ]
         },
+
         {
-          "name": "storage.type.dbml",
-          "match": "\\b(table|Table|ref|Ref)\\b"
-        },
-        {
-          "name": "support.type.dbml",
+          "name": "string.other.dbml",
           "match": "\\b(integer|int|varchar)\\b"
-        },
-        {
-          "name": "keyword.operator.dbml",
-          "match": "\\b(\\<|-|\\>)\\b"
         }
       ]
+    },
+    "table":         {
+      "name": "storage.type.dbml",
+      "match": "\\b(table|Table)\\b"
+    },
+    "ref":         {
+      "name": "storage.type.dbml",
+      "match": "\\b(ref|Ref)\\b"
+    },
+    "relations": {
+      "name": "support.type.dbml",
+      "match": "[<>\\-]"
+    },
+    "alias": {
+      "name": "keyword.control.dbml",
+      "match": "\\bas\\b"
     },
     "strings": {
       "name": "string.quoted.single.dbml",
@@ -53,7 +74,7 @@
       ]
     },
     "column-settings": {
-      "name": "keyword.property.dbml",
+      "name": "keyword.control.dbml",
       "match": "\\b(note|primary key|pk|(not )?null|unique|default|increment)\\b"
     },
     "comment": {
