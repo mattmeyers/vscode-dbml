@@ -1,12 +1,19 @@
-table t1 {
-    c1 int [pk, ref: > t2.id]
+table table1 {
+    id int [pk]
+    t2_ref int [ref: > table2.id]
+    name varchar [unique, not null default: `testing`]
+    b1 bool [default: true]
+    b2 boolean [default: false]
+    b2 boolean [default: null]
 }
 
-Table t2 {}
+Table table2 {
+    id integer [primary key]
+}
 
-table t3 as t3 {}
+table table3 as t3 {}
 
-Table t4 as t4 {}
+Table table4 as t4 {}
 
 a
 b

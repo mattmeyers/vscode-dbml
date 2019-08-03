@@ -3,7 +3,13 @@
   "name": "DBML",
   "patterns": [
     {
-      "include": "#settings"
+      "include": "#table"
+    },
+    {
+      "include": "#table-block"
+    },
+    {
+      "include": "#ref"
     },
     {
       "include": "#strings"
@@ -32,17 +38,15 @@
               "include": "#strings"
             },
             {
+              "include": "#booleans"
+            },
+            {
               "include": "#relations"
             },
             {
               "include": "#ref"
             }
           ]
-        },
-
-        {
-          "name": "string.other.dbml",
-          "match": "\\b(integer|int|varchar)\\b"
         }
       ]
     },
@@ -62,10 +66,25 @@
       "name": "keyword.control.dbml",
       "match": "\\bas\\b"
     },
+    "table-block": {
+      "begin": "{",
+      "end": "}",
+      "patterns": [
+        {
+          "match": "[a-zA-Z0-9_\\-]* ([a-zA-Z0-0()]*) ",
+          "captures": {
+            "1": {"name": "string.other.dbml"}
+          }
+        },
+        {
+          "include": "#settings"
+        }
+      ]
+    },
     "strings": {
       "name": "string.quoted.single.dbml",
-      "begin": "'",
-      "end": "'",
+      "begin": "['\"`]",
+      "end": "['\"`]",
       "patterns": [
         {
           "name": "constant.character.escape.dbml",
@@ -73,9 +92,13 @@
         }
       ]
     },
-    "column-settings": {
+    "booleans": {
       "name": "keyword.control.dbml",
-      "match": "\\b(note|primary key|pk|(not )?null|unique|default|increment)\\b"
+      "match": "\\b(true|false|null)\\b"
+    },
+    "column-settings": {
+      "name": "variable.parameter.dbml",
+      "match": "\\b(note|primary key|pk|not null|unique|default|increment)\\b"
     },
     "comment": {
       "name": "comment.line.double-slash",
