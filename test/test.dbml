@@ -9,6 +9,9 @@ table table1 {
 
 Table table2 {
     id integer [primary key]
+    indexes: {
+        abc [unique]
+    }
 }
 
 table table3 as t3 {}

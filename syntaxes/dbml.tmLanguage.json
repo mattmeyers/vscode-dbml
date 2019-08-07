@@ -58,6 +58,10 @@
       "name": "storage.type.dbml",
       "match": "\\b(ref|Ref)\\b"
     },
+    "indexes": {
+      "name": "storage.type.dbml",
+      "match": "\\b(indexes|Indexes)\\b"
+    },
     "relations": {
       "name": "support.type.dbml",
       "match": "[<>\\-]"
@@ -76,6 +80,21 @@
             "1": {"name": "string.other.dbml"}
           }
         },
+        {
+          "include": "#settings"
+        },
+        {
+          "include": "#index-block"
+        },
+        {
+          "include": "#indexes"
+        }
+      ]
+    },
+    "index-block": {
+      "begin": "{",
+      "end": "}",
+      "patterns": [
         {
           "include": "#settings"
         }
