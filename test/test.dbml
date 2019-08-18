@@ -1,12 +1,17 @@
-table table1 {
+table table1 as t {
     id int [pk]
     t2_ref int [ref: > table2.id]
     name varchar [unique, not null default: `testing`]
     b1 bool [default: true]
     b2 boolean [default: false]
     b2 boolean [default: null]
+    i1 int
 }
 
+Table dsadsa {
+    id int [pk]
+    dasdsa dfdsfd
+}
 Table table2 {
     id integer [primary key]
     indexes: {
@@ -18,71 +23,6 @@ table table3 as t3 {}
 
 Table table4 as t4 {}
 
-a
-b
-c
-d
-e
-f
-g
-h
-i
-j
-k
-l
-m
-n
-o
-p
-q
-r
-s
-t
-u
-v
-w
-x
-y
-z
-aa
-ab
-ac
-ad
-ae
-af
-ag
-ah
-ai
-aj
-ak
-al
-am
-an
-ao
-ap
-aq
-ar
-as
-at
-au
-av
-aw
-ax
-ay
-az
-ba
-bb
-bc
-bd
-be
-bf
-bg
-bh
-bi
-bj
-bk
-bl
-bm
-bn
-bo
-bp
+Enum e_values {
+    val1
+}
