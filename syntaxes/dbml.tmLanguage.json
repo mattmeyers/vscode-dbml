@@ -3,25 +3,7 @@
   "name": "DBML",
   "patterns": [
     {
-      "include": "#table"
-    },
-    {
       "include": "#table-block"
-    },
-    {
-      "include": "#ref"
-    },
-    {
-      "include": "#strings"
-    },
-    {
-      "include": "#comment"
-    },
-    {
-      "include": "#alias"
-    },
-    {
-      "include": "#colors"
     }
   ],
   "repository": {
@@ -52,42 +34,49 @@
     },
     "table":         {
       "name": "storage.type.dbml",
-      "match": "\\b(table|Table)\\b"
+      "match": "\\b[tT]able\\b"
     },
     "ref":         {
       "name": "storage.type.dbml",
-      "match": "\\b(ref|Ref)\\b"
+      "match": "\\b[rR]ef\\b"
+    },
+    "enum": {
+      "name": "storage.type.dbml",
+      "match": "\\b[eE]num\\b"
     },
     "indexes": {
       "name": "storage.type.dbml",
-      "match": "\\b(indexes|Indexes)\\b"
+      "match": "\\b[iI]ndexes\\b"
     },
     "relations": {
       "name": "support.type.dbml",
       "match": "[<>\\-]"
     },
     "alias": {
-      "name": "keyword.control.dbml",
-      "match": "\\bas\\b"
+      "match": "\\b(as)\\b\\S*\\b",
+      "captures": {
+        "1": {"name": "keyword.control.dbml"}
+      }
     },
     "table-block": {
-      "begin": "{",
+      "begin": "^([tT]able)\\s+\\S+\\s+(.*)?{",
       "end": "}",
+      "beginCaptures": {
+        "1": {"name": "storage.type.dbml"},
+        "2": {
+          "patterns": [
+            {
+              "include": "#alias"
+            }
+          ]
+        }
+      },
       "patterns": [
         {
-          "match": "[a-zA-Z0-9_\\-]* ([a-zA-Z0-0()]*) ",
+          "match": "\\s*[a-zA-Z0-9_\\-]* ([a-zA-Z0-0()]*)\\b.*",
           "captures": {
             "1": {"name": "string.other.dbml"}
           }
-        },
-        {
-          "include": "#settings"
-        },
-        {
-          "include": "#index-block"
-        },
-        {
-          "include": "#indexes"
         }
       ]
     },
@@ -99,6 +88,10 @@
           "include": "#settings"
         }
       ]
+    },
+    "enum-block": {
+      "begin": "^[eE]num .* {",
+      "end": "}"
     },
     "strings": {
       "name": "string.quoted.single.dbml",
@@ -122,282 +115,6 @@
     "comment": {
       "name": "comment.line.double-slash",
       "match": "//.*$"
-    },
-    "colors": {
-      "patterns": [
-        {
-          "name": "comment",
-          "match": "^a$"
-        },
-        {
-          "name": "comment.line",
-          "match": "^b$"
-        },
-        {
-          "name": "comment.line.double-slash",
-          "match": "^c$"
-        },
-        {
-          "name": "comment.line.double-dash",
-          "match": "^d$"
-        },
-        {
-          "name": "comment.line.number-sign",
-          "match": "^e$"
-        },
-        {
-          "name": "comment.line.percentage",
-          "match": "^f$"
-        },
-        {
-          "name": "comment.line.character",
-          "match": "^g$"
-        },
-        {
-          "name": "comment.block",
-          "match": "^h$"
-        },
-        {
-          "name": "comment.block.documentation",
-          "match": "^i$"
-        },
-        {
-          "name": "constant",
-          "match": "^j$"
-        },
-        {
-          "name": "constant.numeric",
-          "match": "^k$"
-        },
-        {
-          "name": "constant.character",
-          "match": "^l$"
-        },
-        {
-          "name": "constant.character.escape",
-          "match": "^m$"
-        },
-        {
-          "name": "constant.language",
-          "match": "^n$"
-        },
-        {
-          "name": "constant.other",
-          "match": "^o$"
-        },
-        {
-          "name": "constant.character",
-          "match": "^p$"
-        },
-        {
-          "name": "entity",
-          "match": "^q$"
-        },
-        {
-          "name": "entity.name",
-          "match": "^r$"
-        },
-        {
-          "name": "entity.name.function",
-          "match": "^s$"
-        },
-        {
-          "name": "entity.name.type",
-          "match": "^t$"
-        },
-        {
-          "name": "entity.name.tag",
-          "match": "^u$"
-        },
-        {
-          "name": "entity.name.section",
-          "match": "^v$"
-        },
-        {
-          "name": "entity.other",
-          "match": "^w$"
-        },
-        {
-          "name": "entity.other.inherited-class",
-          "match": "^x$"
-        },
-        {
-          "name": "entity.other.attribute-name",
-          "match": "^y$"
-        },
-        {
-          "name": "invalid",
-          "match": "^z$"
-        },
-        {
-          "name": "invalid.illegal",
-          "match": "^aa$"
-        },
-        {
-          "name": "invalid.deprecated",
-          "match": "^ab$"
-        },
-        {
-          "name": "keyword",
-          "match": "^ac$"
-        },
-        {
-          "name": "keyword.control",
-          "match": "^ad$"
-        },
-        {
-          "name": "keyword.operator",
-          "match": "^ae$"
-        },
-        {
-          "name": "keyword.other",
-          "match": "^af$"
-        },
-        {
-          "name": "markup",
-          "match": "^ag$"
-        },
-        {
-          "name": "markup.underline",
-          "match": "^ah$"
-        },
-        {
-          "name": "markup.underline.link",
-          "match": "^ai$"
-        },
-        {
-          "name": "markup.bold",
-          "match": "^aj$"
-        },
-        {
-          "name": "markup.heading",
-          "match": "^ak$"
-        },
-        {
-          "name": "markup.italic",
-          "match": "^al$"
-        },
-        {
-          "name": "markup.list",
-          "match": "^am$"
-        },
-        {
-          "name": "markup.list.numbered",
-          "match": "^an$"
-        },
-        {
-          "name": "markup.list.unnumbered",
-          "match": "^ao$"
-        },
-        {
-          "name": "markup.quote",
-          "match": "^ap$"
-        },
-        {
-          "name": "markup.raw",
-          "match": "^aq$"
-        },
-        {
-          "name": "markup.other",
-          "match": "^ar$"
-        },
-        {
-          "name": "storage",
-          "match": "^as$"
-        },
-        {
-          "name": "storage.type",
-          "match": "^at$"
-        },
-        {
-          "name": "storage.modifier",
-          "match": "^au$"
-        },
-        {
-          "name": "string",
-          "match": "^av$"
-        },
-        {
-          "name": "string.quoted",
-          "match": "^aw$"
-        },
-        {
-          "name": "string.quoted.single",
-          "match": "^ax$"
-        },
-        {
-          "name": "string.quoted.double",
-          "match": "^ay$"
-        },
-        {
-          "name": "string.quoted.triple",
-          "match": "^az$"
-        },
-        {
-          "name": "string.quoted.other",
-          "match": "^ba$"
-        },
-        {
-          "name": "string.unquoted",
-          "match": "^bb$"
-        },
-        {
-          "name": "string.interpolated",
-          "match": "^bc$"
-        },
-        {
-          "name": "string.regexp",
-          "match": "^bd$"
-        },
-        {
-          "name": "string.other",
-          "match": "^be$"
-        },
-        {
-          "name": "support",
-          "match": "^bf$"
-        },
-        {
-          "name": "support.function",
-          "match": "^bg$"
-        },
-        {
-          "name": "support.class",
-          "match": "^bh$"
-        },
-        {
-          "name": "support.type",
-          "match": "^bi$"
-        },
-        {
-          "name": "support.constant",
-          "match": "^bj$"
-        },
-        {
-          "name": "support.variable",
-          "match": "^bk$"
-        },
-        {
-          "name": "support.other",
-          "match": "^bl$"
-        },
-        {
-          "name": "variable",
-          "match": "^bm$"
-        },
-        {
-          "name": "variable.parameter",
-          "match": "^bn$"
-        },
-        {
-          "name": "variable.language",
-          "match": "^bo$"
-        },
-        {
-          "name": "variable.other",
-          "match": "^bp$"
-        }
-      ]
     }
   },
   "scopeName": "source.dbml"
