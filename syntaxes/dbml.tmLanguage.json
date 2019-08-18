@@ -3,7 +3,13 @@
   "name": "DBML",
   "patterns": [
     {
+      "include": "#comment"
+    },
+    {
       "include": "#table-block"
+    },
+    {
+      "include": "#enum-block"
     }
   ],
   "repository": {
@@ -32,34 +38,18 @@
         }
       ]
     },
-    "table":         {
-      "name": "storage.type.dbml",
-      "match": "\\b[tT]able\\b"
-    },
-    "ref":         {
-      "name": "storage.type.dbml",
-      "match": "\\b[rR]ef\\b"
-    },
-    "enum": {
-      "name": "storage.type.dbml",
-      "match": "\\b[eE]num\\b"
-    },
-    "indexes": {
-      "name": "storage.type.dbml",
-      "match": "\\b[iI]ndexes\\b"
-    },
     "relations": {
       "name": "support.type.dbml",
       "match": "[<>\\-]"
     },
     "alias": {
-      "match": "\\b(as)\\b\\S*\\b",
+      "match": "\\b(as)\\b[\\w-]*\\s",
       "captures": {
         "1": {"name": "keyword.control.dbml"}
       }
     },
     "table-block": {
-      "begin": "^([tT]able)\\s+\\S+\\s+(.*)?{",
+      "begin": "(?i)\\s*(table)\\s+[\\w-]+\\s+(.*)?{",
       "end": "}",
       "beginCaptures": {
         "1": {"name": "storage.type.dbml"},
@@ -73,12 +63,15 @@
       },
       "patterns": [
         {
-          "match": "\\s*[a-zA-Z0-9_\\-]* ([a-zA-Z0-0()]*)\\b.*",
+          "include": "#column"
+        }
+      ]
+    },
+    "column": {
+      "match": "\\s*\\S*\\s*(\\S*)\\b.*",
           "captures": {
             "1": {"name": "string.other.dbml"}
           }
-        }
-      ]
     },
     "index-block": {
       "begin": "{",
@@ -90,8 +83,11 @@
       ]
     },
     "enum-block": {
-      "begin": "^[eE]num .* {",
-      "end": "}"
+      "begin": "(?i)\\s*(enum)\\s+[\\w-]+\\s*{",
+      "end": "}",
+      "beginCaptures": {
+        "1": {"name": "storage.type.dbml"}
+      }
     },
     "strings": {
       "name": "string.quoted.single.dbml",
