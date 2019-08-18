@@ -1,30 +1,48 @@
 {
   "New table": {
-	  "description": "Create a new table",
+    "description": "Create a new table",
     "prefix": "table",
-    "body": ["table $1 {", "\t$0", "}"]
+    "body": ["Table $1 {", "\t$0", "}"]
+  },
+  "New table with ID": {
+    "description": "Create a new table with an int id as the primary key",
+    "prefix": "itable",
+    "body": [
+      "Table $1 {",
+      "\tid int [pk]",
+      "\t$0",
+      "}"
+    ]
+  },
+  "Enum": {
+    "description": "Create a new enum",
+    "prefix": "enum",
+    "body": [
+      "Enum ${1:name} {",
+      "\t$0",
+      "}"
+    ]
   },
   "One to one ref": {
     "prefix": "oto",
-    "body": ["ref: $1 - $0"]
+    "body": ["Ref: $1 - $0"]
   },
   "One to many ref": {
     "prefix": "otm",
-    "body": ["ref: $1 < $0"]
+    "body": ["Ref: $1 < $0"]
   },
   "Many to one ref": {
     "prefix": "mto",
-    "body": ["ref: $1 > $0"]
+    "body": ["Ref: $1 > $0"]
   },
-
   "Many to many": {
-	"description": "Create a join table with two columns and two many-to-one relationships",
+    "description": "Create a join table with two columns and two many-to-one relationships",
     "prefix": "mtm",
     "body": [
-		"table ${1:name} {",
-		"\t${2:col1} int [not null, ref: > ${3:ref1}]",
-		"\t${4:col2} int [not null, ref: > ${0:ref2}]",
-		"}"
-	]
+      "Table ${1:name} {",
+      "\t${2:col1} int [not null, ref: > ${3:ref1}]",
+      "\t${4:col2} int [not null, ref: > ${0:ref2}]",
+      "}"
+    ]
   }
 }
