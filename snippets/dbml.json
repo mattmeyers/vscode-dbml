@@ -1,27 +1,13 @@
 {
-  "New table": {
-    "description": "Create a new table",
-    "prefix": "table",
-    "body": ["Table $1 {", "\t$0", "}"]
-  },
   "New table with ID": {
     "description": "Create a new table with an int id as the primary key",
-    "prefix": "itable",
-    "body": [
-      "Table $1 {",
-      "\tid int [pk]",
-      "\t$0",
-      "}"
-    ]
+    "prefix": "table",
+    "body": ["Table $1 {", "\tid int [pk]", "\t$0", "}"]
   },
   "Enum": {
     "description": "Create a new enum",
     "prefix": "enum",
-    "body": [
-      "Enum ${1:name} {",
-      "\t$0",
-      "}"
-    ]
+    "body": ["Enum ${1:name} {", "\t$0", "}"]
   },
   "One to one ref": {
     "prefix": "oto",
@@ -42,6 +28,10 @@
       "Table ${1:name} {",
       "\t${2:col1} int [not null, ref: > ${3:ref1}]",
       "\t${4:col2} int [not null, ref: > ${0:ref2}]",
+      "",
+      "\tIndexes {",
+      "\t\t(${2:col1}, ${4:col2}) [unique]",
+      "\t}",
       "}"
     ]
   }
