@@ -2,7 +2,7 @@
     "name": "vscode-dbml",
     "displayName": "vscode-dbml",
     "description": "Language support for the Database Markup Language",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "engines": {
         "vscode": "^1.36.0"
     },
@@ -10,6 +10,10 @@
         "Programming Languages",
         "Snippets"
     ],
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/mattmeyers/vscode-dbml.git"
+    },
     "contributes": {
         "languages": [{
             "id": "dbml",

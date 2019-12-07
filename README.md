@@ -1,65 +1,41 @@
-# vscode-dbml README
+# DBML Language Support
 
-This is the README for your extension "vscode-dbml". After writing up a brief description, we recommend including the following sections.
+[![Version 0.1.0 Badge][version-badge]][changelog] [![MIT License Badge][license-badge]][license]
 
-## Features
+This Visual Studio Code extension provides language support for the Database Markup Language ([DBML](https://dbml.org)).
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## Installation
 
-For example if there is an image subfolder under your extension project workspace:
+This extension is not currently on the VS Code Marketplace. In order to install, clone or download the repository and place it in the VS Code extension directory. By default this directory is located at
 
-\!\[feature X\]\(images/feature-x.png\)
+- Linux: `~/.vscode/extensions`
+- macOS: `~/.vscode/extensions`
+- Windows: `%USERPROFILE%\.vscode\extensions`
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Upon placing the extension in the extensions directory, it will be automatically enabled.
 
-## Requirements
+## Syntax Highlighting
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Syntax highlighting is enabled for files with the `.dbml` extension.
 
-## Extension Settings
+![Syntax Example](images/dbml_syntax_example.png)
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Snippets
 
-For example:
+Snippets are provided for quickly creating tables, enums, and references. To use a snippet, begin typing any of the following keys.
 
-This extension contributes the following settings:
+- `table`: Create a new table with an int id as the primary key
+- `enum`: Create a new enum
+- `oto`: Create a one-to-one reference
+- `otm`: Create a one-to-many reference
+- `mto`: Create a many-to-one reference
+- `mtm`: Create a many-to-many join table
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+## Issues
 
-## Known Issues
+If you find an error or bug, please [create an issue](https://github.com/mattmeyers/vscode-dbml/issues/new).
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[changelog]: ./CHANGELOG.md
+[license]: ./LICENSE
+[version-badge]: https://img.shields.io/badge/version-0.1.0-blue.svg
+[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
