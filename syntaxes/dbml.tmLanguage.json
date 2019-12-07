@@ -3,93 +3,14 @@
   "name": "DBML",
   "patterns": [
     {
-      "include": "#comment"
+      "name": "entity.name.type.dbml",
+      "match": "\\b([tT]able|[rR]ef|[eE]num|[iI]ndexes)\\b"
     },
     {
-      "include": "#table-block"
-    },
-    {
-      "include": "#enum-block"
-    }
-  ],
-  "repository": {
-    "settings": {
-      "patterns": [
-        {
-          "begin": "\\[",
-          "end": "\\]",
-          "patterns": [
-            {
-              "include": "#column-settings"
-            },
-            {
-              "include": "#strings"
-            },
-            {
-              "include": "#booleans"
-            },
-            {
-              "include": "#relations"
-            },
-            {
-              "include": "#ref"
-            }
-          ]
-        }
-      ]
-    },
-    "relations": {
       "name": "support.type.dbml",
       "match": "[<>\\-]"
     },
-    "alias": {
-      "match": "\\b(as)\\b[\\w-]*\\s",
-      "captures": {
-        "1": {"name": "keyword.control.dbml"}
-      }
-    },
-    "table-block": {
-      "begin": "(?i)\\s*(table)\\s+[\\w-]+\\s+(.*)?{",
-      "end": "}",
-      "beginCaptures": {
-        "1": {"name": "storage.type.dbml"},
-        "2": {
-          "patterns": [
-            {
-              "include": "#alias"
-            }
-          ]
-        }
-      },
-      "patterns": [
-        {
-          "include": "#column"
-        }
-      ]
-    },
-    "column": {
-      "match": "\\s*\\S*\\s*(\\S*)\\b.*",
-          "captures": {
-            "1": {"name": "string.other.dbml"}
-          }
-    },
-    "index-block": {
-      "begin": "{",
-      "end": "}",
-      "patterns": [
-        {
-          "include": "#settings"
-        }
-      ]
-    },
-    "enum-block": {
-      "begin": "(?i)\\s*(enum)\\s+[\\w-]+\\s*{",
-      "end": "}",
-      "beginCaptures": {
-        "1": {"name": "storage.type.dbml"}
-      }
-    },
-    "strings": {
+    {
       "name": "string.quoted.single.dbml",
       "begin": "['\"`]",
       "end": "['\"`]",
@@ -100,18 +21,18 @@
         }
       ]
     },
-    "booleans": {
-      "name": "keyword.control.dbml",
+    {
+      "name": "keyword.dbml",
+      "match": "\\b(as|by|bool|boolean|bit|blob|decimal|double|enum|float|long|longblob|longtext|medium|mediumblob|mediumint|mediumtext|time|timestamp|tinyblob|tinyint|tinytext|text|bigint|int|int1|int2|int3|int4|int8|integer|float|float4|float8|double|char|varbinary|varchar|varcharacter|precision|date|datetime|year|unsigned|signed|numeric|ucase|lcase|mid|len|round|rank|now|format|coalesce|ifnull|isnull|nvl)\\b"
+    },
+    {
+      "name": "variable.parameter.dbml",
       "match": "\\b(true|false|null)\\b"
     },
-    "column-settings": {
-      "name": "variable.parameter.dbml",
-      "match": "\\b(note|primary key|pk|not null|unique|default|increment)\\b"
-    },
-    "comment": {
+    {
       "name": "comment.line.double-slash",
       "match": "//.*$"
     }
-  },
+  ],
   "scopeName": "source.dbml"
 }
