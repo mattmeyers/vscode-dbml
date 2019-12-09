@@ -11,26 +11,72 @@
         "Snippets"
     ],
     "repository": {
-        "type" : "git",
-        "url" : "https://github.com/mattmeyers/vscode-dbml.git"
+        "type": "git",
+        "url": "https://github.com/mattmeyers/vscode-dbml.git"
     },
+    "activationEvents": [
+        "onCommand:vscode-dbml.helloWorld"
+    ],
+    "main": "./out/main.js",
     "contributes": {
-        "languages": [{
-            "id": "dbml",
-            "aliases": ["DBML", "dbml", "Database Markup Language"],
-            "extensions": [".dbml"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "dbml",
-            "scopeName": "source.dbml",
-            "path": "./syntaxes/dbml.tmLanguage.json"
-        }],
+        "languages": [
+            {
+                "id": "dbml",
+                "aliases": [
+                    "DBML",
+                    "dbml",
+                    "Database Markup Language"
+                ],
+                "extensions": [
+                    ".dbml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "dbml",
+                "scopeName": "source.dbml",
+                "path": "./syntaxes/dbml.tmLanguage.json"
+            }
+        ],
         "snippets": [
             {
-              "language": "dbml",
-              "path": "./snippets/dbml.json"
+                "language": "dbml",
+                "path": "./snippets/dbml.json"
             }
-          ]
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "vscode-dbml.helloWorld",
+                    "when": "editorLangId == dbml"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "vscode-dbml.helloWorld",
+                "title": "DBML: Say Hello"
+            }
+        ]
+    },
+    "scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.40.0",
+        "glob": "^7.1.5",
+        "mocha": "^6.2.2",
+        "typescript": "^3.6.4",
+        "tslint": "^5.20.0",
+        "vscode-test": "^1.2.2"
     }
 }
