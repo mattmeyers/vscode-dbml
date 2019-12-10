@@ -4,6 +4,14 @@ All notable changes to the "vscode-dbml" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.2.0] - 2019-12-10
+### Added
+- Export to SQL command
+
+### Updated
+- Added command information to the README
+- Added autoincrement option to table snippet
+
 ## [0.1.0] - 2019-12-06
 ### Added
 - Basic syntax highlighting based on the DBML parser keywords.

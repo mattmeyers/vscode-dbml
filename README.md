@@ -1,6 +1,6 @@
 # DBML Language Support
 
-[![Version 0.1.0 Badge][version-badge]][changelog] [![MIT License Badge][license-badge]][license]
+[![Version 0.2.0 Badge][version-badge]][changelog] [![MIT License Badge][license-badge]][license]
 
 This Visual Studio Code extension provides language support for the Database Markup Language ([DBML](https://dbml.org)).
 
@@ -49,5 +49,5 @@ If you want to add to this project, feel free to fork the repository and submit 
 
 [changelog]: ./CHANGELOG.md
 [license]: ./LICENSE
-[version-badge]: https://img.shields.io/badge/version-0.1.0-blue.svg
+[version-badge]: https://img.shields.io/badge/version-0.2.0-blue.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
