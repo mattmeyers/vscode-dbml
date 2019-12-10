@@ -3,6 +3,7 @@
     "displayName": "vscode-dbml",
     "description": "Language support for the Database Markup Language",
     "version": "0.1.0",
+    "publisher": "matt-meyers",
     "engines": {
         "vscode": "^1.36.0"
     },
@@ -11,26 +12,76 @@
         "Snippets"
     ],
     "repository": {
-        "type" : "git",
-        "url" : "https://github.com/mattmeyers/vscode-dbml.git"
+        "type": "git",
+        "url": "https://github.com/mattmeyers/vscode-dbml.git"
     },
+    "activationEvents": [
+        "onCommand:vscode-dbml.export"
+    ],
+    "main": "./out/main.js",
     "contributes": {
-        "languages": [{
-            "id": "dbml",
-            "aliases": ["DBML", "dbml", "Database Markup Language"],
-            "extensions": [".dbml"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "dbml",
-            "scopeName": "source.dbml",
-            "path": "./syntaxes/dbml.tmLanguage.json"
-        }],
+        "languages": [
+            {
+                "id": "dbml",
+                "aliases": [
+                    "DBML",
+                    "dbml",
+                    "Database Markup Language"
+                ],
+                "extensions": [
+                    ".dbml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "dbml",
+                "scopeName": "source.dbml",
+                "path": "./syntaxes/dbml.tmLanguage.json"
+            }
+        ],
         "snippets": [
             {
-              "language": "dbml",
-              "path": "./snippets/dbml.json"
+                "language": "dbml",
+                "path": "./snippets/dbml.json"
             }
-          ]
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "vscode-dbml.export",
+                    "when": "editorLangId == dbml"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "vscode-dbml.export",
+                "title": "To SQL",
+                "category": "DBML"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.12.16",
+        "@types/vscode": "^1.40.0",
+        "glob": "^7.1.5",
+        "mocha": "^6.2.2",
+        "tslint": "^5.20.0",
+        "typescript": "^3.6.4",
+        "vscode-test": "^1.2.2"
+    },
+    "dependencies": {
+        "@dbml/core": "^1.2.1"
     }
 }

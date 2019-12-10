@@ -2,7 +2,7 @@
   "New table with ID": {
     "description": "Create a new table with an int id as the primary key",
     "prefix": "table",
-    "body": ["Table $1 {", "\tid int [pk]", "\t$0", "}"]
+    "body": ["Table $1 {", "\tid int [pk, increment]", "\t$0", "}"]
   },
   "Enum": {
     "description": "Create a new enum",

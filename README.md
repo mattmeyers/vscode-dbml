@@ -18,13 +18,21 @@ Upon placing the extension in the extensions directory, it will be automatically
 
 Syntax highlighting is enabled for files with the `.dbml` extension.
 
-![Syntax Example](images/dbml_syntax_example.png)
+![Syntax Example](https://raw.githubusercontent.com/mattmeyers/vscode-dbml/master/images/dbml_syntax_example.png)
+
+## Commands
+
+### To SQL
+
+When focusing a `.dbml` file, the `DBML: To SQL` becomes available in the command palette. This command leverages the `@dbml/core` ([source](https://github.com/holistics/dbml/tree/master/packages/dbml-core)) package to generate an SQL script based on the provided schema.
+
+Selecting this commands presents all available dialects. At this time the three available dialects are PostgreSQL, MySQL, and SQL Server. After choosing a dialect, enter an output filename. If a relative path is provided, the generated file will be placed relative to the focused `.dbml` file. Otherwise is will be placed at the provided absolute path.
 
 ## Snippets
 
 Snippets are provided for quickly creating tables, enums, and references. To use a snippet, begin typing any of the following keys.
 
-- `table`: Create a new table with an int id as the primary key
+- `table`: Create a new table with an auto-incrementing int id as the primary key
 - `enum`: Create a new enum
 - `oto`: Create a one-to-one reference
 - `otm`: Create a one-to-many reference
@@ -34,6 +42,10 @@ Snippets are provided for quickly creating tables, enums, and references. To use
 ## Issues
 
 If you find an error or bug, please [create an issue](https://github.com/mattmeyers/vscode-dbml/issues/new).
+
+## Contributing
+
+If you want to add to this project, feel free to fork the repository and submit a pull request.
 
 [changelog]: ./CHANGELOG.md
 [license]: ./LICENSE
