@@ -4,16 +4,6 @@
 
 This Visual Studio Code extension provides language support for the Database Markup Language ([DBML](https://dbml.org)).
 
-## Installation
-
-This extension is not currently on the VS Code Marketplace. In order to install, clone or download the repository and place it in the VS Code extension directory. By default this directory is located at
-
-- Linux: `~/.vscode/extensions`
-- macOS: `~/.vscode/extensions`
-- Windows: `%USERPROFILE%\.vscode\extensions`
-
-Upon placing the extension in the extensions directory, it will be automatically enabled.
-
 ## Syntax Highlighting
 
 Syntax highlighting is enabled for files with the `.dbml` extension.

@@ -18,7 +18,7 @@
     "activationEvents": [
         "onCommand:vscode-dbml.export"
     ],
-    "main": "./out/main.js",
+    "main": "./dist/main.js",
     "contributes": {
         "languages": [
             {
@@ -64,7 +64,10 @@
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run compile",
+        "vscode:prepublish": "webpack --mode production",
+        "webpack": "webpack --mode development",
+        "webpack-dev": "webpack --mode development --watch",
+        "test-compile": "tsc -p ./",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile",
@@ -74,12 +77,15 @@
         "@types/glob": "^7.1.1",
         "@types/mocha": "^5.2.7",
         "@types/node": "^12.12.16",
-        "@types/vscode": "^1.40.0",
+        "@types/vscode": "^1.36.0",
         "glob": "^7.1.5",
         "mocha": "^6.2.2",
+        "ts-loader": "^6.2.1",
         "tslint": "^5.20.0",
         "typescript": "^3.6.4",
-        "vscode-test": "^1.2.2"
+        "vscode-test": "^1.2.2",
+        "webpack": "^4.41.2",
+        "webpack-cli": "^3.3.10"
     },
     "dependencies": {
         "@dbml/core": "^1.2.1"
