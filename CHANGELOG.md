@@ -4,6 +4,14 @@ All notable changes to the "vscode-dbml" extension will be documented in this fi
 
 ## [Unreleased]
 
+## [0.2.1] - 2019-12-10
+### Added
+- Webpack configuration
+- Configuration for publishing
+
+### Removed
+- Removed installation instructions from README
+
 ## [0.2.0] - 2019-12-10
 ### Added
 - Export to SQL command
