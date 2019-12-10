@@ -18,7 +18,7 @@ Upon placing the extension in the extensions directory, it will be automatically
 
 Syntax highlighting is enabled for files with the `.dbml` extension.
 
-![Syntax Example](images/dbml_syntax_example.png)
+![Syntax Example](https://raw.githubusercontent.com/mattmeyers/vscode-dbml/master/images/dbml_syntax_example.png)
 
 ## Commands
 
