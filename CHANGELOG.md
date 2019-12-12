@@ -2,7 +2,13 @@
 
 All notable changes to the "vscode-dbml" extension will be documented in this file.
 
-## [Unreleased]
+## [0.3.0] - 2019-12-12
+### Added
+- Import From SQL command
+
+### Updated
+- Restructured syntax to account for the actual structure of the document
+- Added new command and image to README
 
 ## [0.2.1] - 2019-12-10
 ### Added

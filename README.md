@@ -1,6 +1,6 @@
 # DBML Language Support
 
-[![Version 0.2.1 Badge][version-badge]][changelog] [![MIT License Badge][license-badge]][license]
+[![Version 0.3.0 Badge][version-badge]][changelog] [![MIT License Badge][license-badge]][license]
 
 This Visual Studio Code extension provides language support for the Database Markup Language ([DBML](https://dbml.org)).
 
@@ -14,9 +14,13 @@ Syntax highlighting is enabled for files with the `.dbml` extension.
 
 ### To SQL
 
-When focusing a `.dbml` file, the `DBML: To SQL` becomes available in the command palette. This command leverages the `@dbml/core` ([source](https://github.com/holistics/dbml/tree/master/packages/dbml-core)) package to generate an SQL script based on the provided schema.
+When focusing a `.dbml` file, the `DBML: To SQL` command becomes available in the command palette. This command leverages the `@dbml/core` ([source](https://github.com/holistics/dbml/tree/master/packages/dbml-core)) package to generate an SQL script based on the provided schema.
 
 Selecting this commands presents all available dialects. At this time the three available dialects are PostgreSQL, MySQL, and SQL Server. After choosing a dialect, enter an output filename. If a relative path is provided, the generated file will be placed relative to the focused `.dbml` file. Otherwise is will be placed at the provided absolute path.
+
+### From SQL
+
+When focusing a `.sql` file, the `DBML: From SQL` command appears in the command palette. This command acts as the opposite of the `DBML: To SQL` command and generates a `.dbml` from from the provided `.sql` file. The dialect of the SQL must be provided. At this time, this command only works for PostgreSQL and MySQL.
 
 ## Snippets
 
@@ -39,5 +43,5 @@ If you want to add to this project, feel free to fork the repository and submit 
 
 [changelog]: ./CHANGELOG.md
 [license]: ./LICENSE
-[version-badge]: https://img.shields.io/badge/version-0.2.1-blue.svg
+[version-badge]: https://img.shields.io/badge/version-0.3.0-blue.svg
 [license-badge]: https://img.shields.io/badge/license-MIT-blue.svg

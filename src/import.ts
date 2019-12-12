@@ -58,7 +58,6 @@ export default class Importer {
     } else {
       vscode.window.showErrorMessage(`Failed to generated DBML file`);
     }
-
   }
 
   private getDefaultOutput(infile: string): string {
