@@ -23,7 +23,7 @@ CREATE TABLE "countries" (
   "code" int PRIMARY KEY,
   "name" varchar,
   "continent_name" varchar,
-  "test" "bool(default: true)"
+  "test" bool DEFAULT true
 );
 
 CREATE TABLE "order_items" (
@@ -63,5 +63,7 @@ ALTER TABLE "products" ADD FOREIGN KEY ("merchant_id") REFERENCES "merchants" ("
 CREATE INDEX "product_status" ON "products" ("merchant_id", "status");
 
 CREATE UNIQUE INDEX ON "products" ("id");
+
+COMMENT ON COLUMN "countries"."test" IS 'This is a test';
 
 COMMENT ON COLUMN "orders"."created_at" IS 'When order created';
