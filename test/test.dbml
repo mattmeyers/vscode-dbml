@@ -21,11 +21,7 @@ Table countries {
   code int [pk]
   name varchar
   continent_name varchar
-<<<<<<< Updated upstream
-  test bool [default: true]
-=======
   test bool [default: true, note: 'This is a test']
->>>>>>> Stashed changes
 }
 
 // Creating references

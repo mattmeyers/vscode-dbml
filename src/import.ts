@@ -12,9 +12,9 @@ export default class Importer {
     }
 
     const infile: string = vscode.window.activeTextEditor.document.fileName;
-
+    // TODO: Add mssql back in when the importer works
     const dialect: string | undefined = await vscode.window.showQuickPick(
-      Object.values(Dialect),
+      Object.values(Dialect).slice(0,2),
       {
         placeHolder: "Select an input dialect"
       }
@@ -52,8 +52,11 @@ export default class Importer {
         break;
     }
 
-    if (sql !== undefined) {
+    if (dbml !== undefined && dbml !== '') {
       fs.writeFileSync(outfile, dbml);
+      vscode.window.showInformationMessage(`Successfully generated ${outfile}`);
+    } else {
+      vscode.window.showErrorMessage(`Failed to generated DBML file`);
     }
   }
 

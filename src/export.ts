@@ -52,9 +52,13 @@ export default class Exporter {
         break;
     }
 
-    if (sql !== undefined) {
+    if (sql !== undefined && sql !== '') {
       fs.writeFileSync(outfile, sql);
+      vscode.window.showInformationMessage(`Successfully generated ${outfile}`);
+    } else {
+      vscode.window.showErrorMessage(`Failed to generated SQL file`);
     }
+
   }
 
   private getDefaultOutput(infile: string): string {
