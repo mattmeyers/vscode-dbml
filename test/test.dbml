@@ -21,7 +21,7 @@ Table countries {
   code int [pk]
   name varchar
   continent_name varchar
-  test bool (default: true)
+  test bool [default: true]
 }
 
 // Creating references
@@ -68,7 +68,7 @@ Table products {
   name varchar
   merchant_id int [not null]
   price int
-  status products_status
+  status products_status // enum column type
   created_at datetime [default: `now()`]
 
   Indexes {
