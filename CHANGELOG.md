@@ -2,6 +2,13 @@
 
 All notable changes to the "vscode-dbml" extension will be documented in this file.
 
+## [0.3.1] - 2019-12-12
+### Added
+- Success and failure message on file generation
+
+### Removed
+- MSSQL dialect from `DBML: From SQL` command
+
 ## [0.3.0] - 2019-12-12
 ### Added
 - Import From SQL command
