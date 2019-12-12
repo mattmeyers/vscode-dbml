@@ -16,7 +16,8 @@
         "url": "https://github.com/mattmeyers/vscode-dbml.git"
     },
     "activationEvents": [
-        "onCommand:vscode-dbml.export"
+        "onCommand:vscode-dbml.export",
+        "onCommand:vscode-dbml.import"
     ],
     "main": "./dist/main.js",
     "contributes": {
@@ -52,6 +53,10 @@
                 {
                     "command": "vscode-dbml.export",
                     "when": "editorLangId == dbml"
+                },
+                {
+                    "command": "vscode-dbml.import",
+                    "when": "editorLangId == sql"
                 }
             ]
         },
@@ -59,6 +64,11 @@
             {
                 "command": "vscode-dbml.export",
                 "title": "To SQL",
+                "category": "DBML"
+            },
+            {
+                "command": "vscode-dbml.import",
+                "title": "From SQL",
                 "category": "DBML"
             }
         ]
