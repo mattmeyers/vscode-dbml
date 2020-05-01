@@ -2,7 +2,7 @@
     "name": "vscode-dbml",
     "displayName": "vscode-dbml",
     "description": "Language support for the Database Markup Language",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "publisher": "matt-meyers",
     "engines": {
         "vscode": "^1.36.0"

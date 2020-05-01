@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-dbml" extension will be documented in this file.
 
+## [0.3.2] - 2020-04-30
+### Added
+- Syntax highlighting for Projects and multiline comments
+
 ## [0.3.1] - 2019-12-12
 ### Added
 - Success and failure message on file generation
