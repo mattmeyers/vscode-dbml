@@ -1,3 +1,12 @@
+Project my_project {
+  database_type: 'PostgreSQL'
+  Note: '''
+    This is my project
+
+    I can give it a multiline comment to describe it
+  '''
+}
+
 //// -- LEVEL 1
 //// -- Tables and References
 
@@ -22,6 +31,10 @@ Table countries {
   name varchar
   continent_name varchar
   test bool [default: true, note: 'This is a test']
+
+  Note {
+    'this is another way to define a note'
+  }
 }
 
 // Creating references
@@ -65,11 +78,18 @@ Enum products_status {
 // Indexes: You can define a single or multi-column index
 Table products {
   id int [pk]
-  name varchar
+  name JSONB
   merchant_id int [not null]
   price int
   status products_status // enum column type
-  created_at datetime [default: `now()`]
+  created_at datetime [not null, default: `now()`]
+
+  Note: '''
+    This is a\
+    multiline
+    comment
+    \'''\ttest
+  '''
 
   Indexes {
     (merchant_id, status) [name:'product_status']
