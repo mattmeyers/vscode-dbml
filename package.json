@@ -86,8 +86,8 @@
     "devDependencies": {
         "@types/glob": "^7.1.1",
         "@types/mocha": "^5.2.7",
-        "@types/node": "^12.12.37",
-        "@types/vscode": "^1.44.0",
+        "@types/node": "^12.12.38",
+        "@types/vscode": "^1.45.0",
         "glob": "^7.1.5",
         "mocha": "^6.2.3",
         "ts-loader": "^6.2.2",
@@ -98,6 +98,6 @@
         "webpack-cli": "^3.3.11"
     },
     "dependencies": {
-        "@dbml/core": "^1.3.1"
+        "@dbml/core": "^2.0.1"
     }
 }
