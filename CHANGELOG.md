@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-dbml" extension will be documented in this file.
 
+## [0.3.4] - 2020-07-01
+### Updated
+- Added timestamptz to keywords for PostgreSQL compliance
+
 ## [0.3.3] - 2020-05-11
 ### Updated
 - Bumped @dbml/core version to 2.0.1

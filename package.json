@@ -2,7 +2,7 @@
     "name": "vscode-dbml",
     "displayName": "vscode-dbml",
     "description": "Language support for the Database Markup Language",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "publisher": "matt-meyers",
     "engines": {
         "vscode": "^1.36.0"
@@ -87,7 +87,7 @@
         "@types/glob": "^7.1.1",
         "@types/mocha": "^5.2.7",
         "@types/node": "^12.12.38",
-        "@types/vscode": "^1.45.0",
+        "@types/vscode": "^1.36.0",
         "glob": "^7.1.5",
         "mocha": "^6.2.3",
         "ts-loader": "^6.2.2",
