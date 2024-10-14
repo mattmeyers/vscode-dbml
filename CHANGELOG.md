@@ -2,6 +2,10 @@
 
 All notable changes to the "vscode-dbml" extension will be documented in this file.
 
+## [0.4.1] - 2024-10-14
+### Added
+- DBML file icon (Thanks @BOCOVO)
+
 ## [0.4.0] - 2024-10-14
 ### Added
 - Support for `TableGroup` (Thanks @CJSantee)
