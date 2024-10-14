@@ -98,3 +98,9 @@ Table products {
 }
 
 Ref: products.merchant_id > merchants.id // many-to-one
+
+// TableGroups: You can combine multiple tables in a TableGroup
+TableGroup order {
+  orders
+  order_items
+}
