@@ -60,7 +60,7 @@
     "structures": {
       "comment": "Main data structure tags",
       "name": "entity.name.type.dbml",
-      "match": "\\b([pP]roject|[tT]able|[rR]ef|[eE]num|[iI]ndexes|[nN]ote)\\b"
+      "match": "\\b([pP]roject|[tT]able([gG]roup)?|[rR]ef|[eE]num|[iI]ndexes|[nN]ote)\\b"
     },
     "keywords": {
       "name": "keyword.dbml",

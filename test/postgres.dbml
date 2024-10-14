@@ -39,6 +39,11 @@ Table "orders" {
   "created_at" varchar [note: 'When order created']
 }
 
+TableGroup "order" [note: "Tables related to orders"] {
+  "orders"
+  "order_items"
+}
+
 Table "products" {
   "id" int [pk]
   "name" varchar
