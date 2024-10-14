@@ -1,3 +1,11 @@
+> ## ⚠️ Please Read ⚠️
+> 
+> I no longer use VS Code and have no intention to actively maintain this extension.
+> If you notice any differences between this extension and the official DBML language, please submit a PR with a fix.
+> I will happily review, merge, and release any fixes.
+> Thanks!
+
+
 # DBML Language Support
 
 [![Version 0.3.5 Badge][version-badge]][changelog] [![MIT License Badge][license-badge]][license]
