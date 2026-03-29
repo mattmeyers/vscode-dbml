@@ -1,9 +1,7 @@
 > ## ⚠️ Please Read ⚠️
 > 
-> I no longer use VS Code and have no intention to actively maintain this extension.
-> If you notice any differences between this extension and the official DBML language, please submit a PR with a fix.
-> I will happily review, merge, and release any fixes.
-> Thanks!
+> I no longer use VS Code or DBML, and therefore have no intention to maintain this extension.
+> Feel free to fork this repo if you notice any problems as issues will no longer be fixed.
 
 
 # DBML Language Support
