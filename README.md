@@ -2,6 +2,10 @@
 > 
 > I no longer use VS Code or DBML, and therefore have no intention to maintain this extension.
 > Feel free to fork this repo if you notice any problems as issues will no longer be fixed.
+>
+> For a maintained alternative, see the official dbdiagram/DBML extension:
+>
+> https://marketplace.visualstudio.com/items?itemName=dbdiagram.dbdiagram-vscode
 
 
 # DBML Language Support
